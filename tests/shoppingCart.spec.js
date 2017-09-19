@@ -111,7 +111,33 @@ describe('ShoppingCart', () => {
         });
     });
 
+    describe('#mainProcess(level, quantity, price)', () => {
+        it('VIP會員，滿500，8折', () => {
+            // Arrange
+            var level = 'VIP';
+            var quantity = 0;
+            var price = 500;
+            var expected = 400;
 
+            // Act
+            var actual = shoppingCart.mainProcess(level, quantity, price);
+            // Assert
+            actual.should.equal(expected)
+        });
+
+        it('一般會員，滿1000，購買數量達三件以上，85折', () => {
+            // Arrange
+            var level = 'Normal';
+            var quantity = 3;
+            var price = 1000;
+            var expected = 850;
+
+            // Act
+            var actual = shoppingCart.mainProcess(level, quantity, price);
+            // Assert
+            actual.should.equal(expected)
+        });
+    });
 
 });
 
