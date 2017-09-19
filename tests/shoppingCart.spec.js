@@ -79,7 +79,7 @@ describe('ShoppingCart', () => {
             var expected = true;
 
             // Act
-            var actual = shoppingCart.checkPriceAndLeastPay(price, atLeastPay);
+            var actual = shoppingCart.checkLeastPcs(quantity, pcs);
             // Assert
             actual.should.equal(expected)
         });
@@ -91,7 +91,7 @@ describe('ShoppingCart', () => {
             var expected = false;
 
             // Act
-            var actual = shoppingCart.checkPriceAndLeastPay(price, atLeastPay);
+            var actual = shoppingCart.checkLeastPcs(quantity, pcs);
             // Assert
             actual.should.equal(expected)
         });
