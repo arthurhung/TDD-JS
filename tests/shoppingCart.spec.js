@@ -97,6 +97,19 @@ describe('ShoppingCart', () => {
         });
     });
 
+    describe('#getDiscountPrice(price, discount)', () => {
+        it('計算折扣', () => {
+            // Arrange
+            var price = 500;
+            var discount = 0.8;
+            var expected = 400;
+
+            // Act
+            var actual = shoppingCart.getDiscountPrice(price, discount);
+            // Assert
+            actual.should.equal(expected)
+        });
+    });
 
 
 
