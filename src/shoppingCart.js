@@ -40,4 +40,15 @@ ShoppingCart.prototype.getDiscountPrice = function (price, discount) {
     return discountPrice
 }
 
+ShoppingCart.prototype.mainProcess = function (level, quantity, price) {
+    var config = this.getLogicConfig(level);
+    var checkPrice = this.checkPriceAndLeastPay(price, config.atLeastPay);
+    var checkQuantity = this.checkLeastPcs(quantity, config.pcs);
+    if (checkPrice && checkQuantity) {
+        return this.getDiscountPrice(price, config.discount);
+    }
+    return price
+}
+
+
 module.exports = ShoppingCart;
