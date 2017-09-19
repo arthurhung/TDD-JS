@@ -35,4 +35,9 @@ ShoppingCart.prototype.checkLeastPcs = function (quantity, pcs) {
     return false;
 }
 
+ShoppingCart.prototype.getDiscountPrice = function (price, discount) {
+    var discountPrice = price * discount
+    return discountPrice
+}
+
 module.exports = ShoppingCart;
