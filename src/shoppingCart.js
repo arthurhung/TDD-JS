@@ -21,4 +21,12 @@ ShoppingCart.prototype.getLogicConfig = function (level) {
     return config;
 }
 
+ShoppingCart.prototype.checkPriceAndLeastPay = function (price, atLeastPay) {
+    if (price >= atLeastPay) {
+        return true;
+    }
+    return false;
+}
+
+
 module.exports = ShoppingCart;
