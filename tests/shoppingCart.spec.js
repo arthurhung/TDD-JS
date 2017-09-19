@@ -58,7 +58,48 @@ describe('ShoppingCart', () => {
             actual.should.equal(expected)
         });
 
+        it('如果沒有滿額，return False', () => {
+            // Arrange
+            var price = 499;
+            var atLeastPay = 500;
+            var expected = false;
+
+            // Act
+            var actual = shoppingCart.checkPriceAndLeastPay(price, atLeastPay);
+            // Assert
+            actual.should.equal(expected)
+        });
     });
+
+    describe('#checkLeastPcs(quantity, pcs)', () => {
+        it('如果達最低商品數量，return True', () => {
+            // Arrange
+            var quantity = 3;
+            var pcs = 3;
+            var expected = true;
+
+            // Act
+            var actual = shoppingCart.checkPriceAndLeastPay(price, atLeastPay);
+            // Assert
+            actual.should.equal(expected)
+        });
+
+        it('如果未達最低商品數量，return False', () => {
+            // Arrange
+            var quantity = 2;
+            var pcs = 3;
+            var expected = false;
+
+            // Act
+            var actual = shoppingCart.checkPriceAndLeastPay(price, atLeastPay);
+            // Assert
+            actual.should.equal(expected)
+        });
+    });
+
+
+
+
 });
 
 
